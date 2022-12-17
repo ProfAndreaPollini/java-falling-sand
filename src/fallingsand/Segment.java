@@ -37,7 +37,9 @@ public class Segment {
         } else {
             var minCol = Math.min(start.col,end.col);
             var maxCol = Math.max(start.col, end.col);
-
+            for (int i = minCol; i < maxCol; i++) {
+                gfx.rect(i*Particle.SIZE,start.row*Particle.SIZE,Particle.SIZE,Particle.SIZE);
+            }
         }
     }
 }

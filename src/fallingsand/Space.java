@@ -48,7 +48,35 @@ public class Space {
 
     public void update() {
         for (var p:particelle) {
-            p.moveDown();
+            var down = p.getDownPos();
+            //boolean collided = isNotFree(down);
+            if (!isNotFree(down)) {
+                p.moveDown();
+            } else {
+                if (!isNotFree(p.getLeftDownPos())) {
+                    p.moveLeftDown();
+                } else {
+                    if(!isNotFree(p.getRightDownPos())) {
+                        p.moveRightDown();
+                    }
+                }
+            }
         }
+    }
+
+    private boolean isNotFree(Position down) {
+        var collided = false;
+        for(var s:segmenti) {
+            if(s.collide(down)) {
+                collided = true;
+                break;
+            }
+        }
+        for(var p1:particelle) {
+            if (p1.row == down.row && p1.col == down.col) {
+                collided = true;
+            }
+        }
+        return collided;
     }
 }

@@ -32,4 +32,20 @@ public class Position {
     public Position getDownPos() {
         return new Position(row+1,col);
     }
+
+    public Position getLeftDownPos() {
+        return new Position(row+1,col-1);
+    }
+    public Position getRightDownPos() {
+        return new Position(row+1,col+1);
+    }
+
+    public void moveLeftDown() {
+        row +=1;
+        col -=1;
+    }
+    public void moveRightDown() {
+        row +=1;
+        col +=1;
+    }
 }

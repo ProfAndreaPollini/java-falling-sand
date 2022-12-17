@@ -3,7 +3,7 @@ package fallingsand;
 import processing.core.PGraphics;
 
 public class Particle extends Position {
-    public static final int SIZE = 5;
+    public static final int SIZE = 10;
     private final PGraphics gfx;
 
     public void draw() {
@@ -23,4 +23,6 @@ public class Particle extends Position {
                 ", col=" + col +
                 '}';
     }
+
+
 }
