@@ -36,18 +36,18 @@ public class App extends PApplet {
             String line;
             while((line = reader.readLine()) !=null) {
                 var fields = line.split(" ");
-                var row0 = Integer.valueOf(fields[0]).intValue();
-                var col0 = Integer.valueOf(fields[1]).intValue();
-                var row1 = Integer.valueOf(fields[2]).intValue();
-                var col1 = Integer.valueOf(fields[3]).intValue();
+                var row0 = Integer.parseInt(fields[0]);
+                var col0 = Integer.parseInt(fields[1]);
+                var row1 = Integer.parseInt(fields[2]);
+                var col1 = Integer.parseInt(fields[3]);
                 space.addSegment(new Position(row0,col0), new Position(row1,col1));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        space.addSegment(new Position(10,20), new Position(20,20));
-        space.addSegment(new Position(20,20), new Position(20,30));
-        space.addSegment(new Position(20,30), new Position(10,30));
+//        space.addSegment(new Position(10,20), new Position(20,20));
+//        space.addSegment(new Position(20,20), new Position(20,30));
+//        space.addSegment(new Position(20,30), new Position(10,30));
         space.addSegment(new Position(80,0), new Position(0,0));
         space.addSegment(new Position(80,0), new Position(80,100));
         //frameRate(20);
