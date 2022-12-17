@@ -26,5 +26,18 @@ public class Segment {
         return pos.row == start.row && (pos.col >= minCol && pos.col <= maxCol);
     }
 
+    public void draw() {
+        var isVertical = (start.col == end.col);
+        if(isVertical) {
+            var minRow = Math.min(start.row,end.row);
+            var maxRow = Math.max(start.row, end.row);
+            for (int i = minRow; i < maxRow; i++) {
+                gfx.rect(start.col*Particle.SIZE,i*Particle.SIZE,Particle.SIZE,Particle.SIZE);
+            }
+        } else {
+            var minCol = Math.min(start.col,end.col);
+            var maxCol = Math.max(start.col, end.col);
 
+        }
+    }
 }
