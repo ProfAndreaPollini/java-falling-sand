@@ -27,6 +27,7 @@ public class App extends PApplet {
             //particles.add(new Particle(5,3+i,getGraphics()));
             space.addParticle(5,3+i);
         }
+        space.addSegment(new Position(30,50), new Position(90,50));
     }
 
     @Override

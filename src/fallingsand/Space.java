@@ -16,6 +16,14 @@ public class Space {
         segmenti = new ArrayList<>();
     }
 
+    public void addSegment(Segment s) {
+        segmenti.add(s);
+    }
+
+    public void addSegment(Position start, Position end) {
+        segmenti.add(new Segment(start,end,gfx));
+    }
+
     public void addParticle(Particle p){
         particelle.add(p);
     }
@@ -31,6 +39,10 @@ public class Space {
     public void draw() {
         for (var p:particelle) {
             p.draw();
+        }
+        gfx.fill(20);
+        for (var s:segmenti) {
+            s.draw();
         }
     }
 
