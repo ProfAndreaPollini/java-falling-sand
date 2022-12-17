@@ -9,10 +9,10 @@ public class App extends PApplet {
 
     public static final int WIDTH = 800;
     public static final int HEIGHT = 800;
-    private final List<Particle> particles;
+    private  Space space;
 
     public App() {
-        particles = new ArrayList<>();
+
     }
 
     @Override
@@ -22,20 +22,21 @@ public class App extends PApplet {
 
     @Override
     public void setup() {
+        space = new Space(getGraphics());
         for (int i = 10; i < 20; i++) {
-            particles.add(new Particle(5,3+i,getGraphics()));
+            //particles.add(new Particle(5,3+i,getGraphics()));
+            space.addParticle(5,3+i);
         }
     }
 
     @Override
     public void draw() {
+        space.update();
         background(55);
-        for (var p:particles) {
-            p.moveDown();
-        }
-        for (var p:particles) {
-            p.draw();
-        }
+//        for (var p:particles) {
+//            p.moveDown();
+//        }
+       space.draw();
     }
 
     public static void main(String[] args) {

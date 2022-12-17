@@ -28,6 +28,7 @@ public class Position {
     public void moveDown() {
         row = row + 1;
     }
+
     public Position getDownPos() {
         return new Position(row+1,col);
     }
